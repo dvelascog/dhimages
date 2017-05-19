@@ -1,0 +1,39 @@
+version: '2'
+services:
+  apache:
+    build: docker/development/apache
+    container_name: dhimages.app
+    ports:
+      - "8087:80"
+      - "2227:22"
+      - "9007:9000"
+    depends_on:
+      - mysql
+    volumes_from:
+      - key_volume
+      - code_volume
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=dhimages
+    volumes:
+      - db_data:/var/lib/mysql
+
+  key_volume:
+    image: busybox
+    volumes:
+      - ~/.ssh:/root/.hostssh
+      - ~/.gitconfig:/root/.gitconfig
+      - ~/.composer:/root/.composer
+
+  code_volume:
+    image: busybox
+    volumes:
+      - .:/app
+
+volumes:
+  db_data:
