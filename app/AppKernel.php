@@ -15,6 +15,24 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+
+            #Sonata
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Sonata\ClassificationBundle\SonataClassificationBundle(),
+
+            #Others
+            new Liip\ImagineBundle\LiipImagineBundle(),
+            
+            #App
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             new AppBundle\AppBundle(),
         ];
 
