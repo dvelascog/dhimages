@@ -1,0 +1,5 @@
+services:
+    dualhand.media_processor:
+        class: AppBundle\Utils\MediaProcessor
+        arguments: [ "@doctrine.orm.entity_manager", "@liip_imagine.controller", "@request_stack", "@sonata.media.provider.image"]
+        scope: request

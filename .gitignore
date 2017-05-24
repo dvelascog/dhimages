@@ -14,3 +14,15 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+/web/uploads/
+web/css/*
+web/js/*
+!web/uploads/.gitkeep
+/app/bootstrap.php.cache
+/composer.phar
+backups/
+web/sitemap*xml*
+.idea
+.DS_Store
+node_modules/*
+/app/Resources/svg/optimized
