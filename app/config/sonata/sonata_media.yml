@@ -32,7 +32,10 @@ liip_imagine:
     resolvers:
        default:
           web_path: ~
-
+    loaders:
+        default:
+            filesystem:
+                data_root: %liip_folders%
     filter_sets:
         cache: ~
         dynamic:
